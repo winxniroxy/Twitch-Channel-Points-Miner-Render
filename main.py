@@ -45,9 +45,9 @@ twitch_miner = TwitchChannelPointsMiner(
             BET_wiN=Fore.MAGENTA                # Color allowed are: [BLACK, RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN, WHITE, RESET].
         ),
         telegram=Telegram(                                                          # You can omit or set to None if you don't want to receive updates on Telegram
-            chat_id=123456789,                                                      # Chat ID to send messages @getmyid_bot
-            token="123456789:shfuihreuifheuifhiu34578347",                          # Telegram API token @BotFather
-            events=[Events.STREAMER_ONLINE, Events.STREAMER_OFFLINE,
+            chat_id=846317782    ,                                                      # Chat ID to send messages @getmyid_bot
+            token="6047167956:AAGia2JM0My6QHk33NNun1-ZeZNjd4VCmtE",                          # Telegram API token @BotFather
+            events=[Events.STREAMER_ONLINE, Events.ON_MESSAGE, Events.STREAMER_OFFLINE,
                     Events.BET_LOSE, Events.CHAT_MENTION],                          # Only these events will be sent to the chat
             disable_notification=True,                                              # Revoke the notification (sound/vibration)
         ),
@@ -108,13 +108,79 @@ twitch_miner = TwitchChannelPointsMiner(
 
 twitch_miner.mine(
     [
-       Streamer("pimpcs", settings=StreamerSettings(make_predictions=True  , follow_raid=True , claim_drops=True  , watch_streak=True , bet=BetSettings(strategy=Strategy.SMART      , percentage=5 , stealth_mode=True,  percentage_gap=20 , max_points=234   , filter_condition=FilterCondition(by=OutcomeKeys.TOTAL_USERS,      where=Condition.LTE, value=800 ) ) )),
-       Streamer("lobanjicaa", settings=StreamerSettings(make_predictions=True , follow_raid=True  , claim_drops=True ,                     bet=BetSettings(strategy=Strategy.PERCENTAGE , percentage=5 , stealth_mode=False, percentage_gap=20 , max_points=1234  , filter_condition=FilterCondition(by=OutcomeKeys.TOTAL_POINTS,     where=Condition.GTE, value=250 ) ) )),
-       Streamer("olofmeister", settings=StreamerSettings(make_predictions=True , follow_raid=True  , claim_drops=True ,                     bet=BetSettings(strategy=Strategy.PERCENTAGE , percentage=5 , stealth_mode=False, percentage_gap=20 , max_points=1234  , filter_condition=FilterCondition(by=OutcomeKeys.TOTAL_POINTS,     where=Condition.GTE, value=250 ) ) )),
-       Streamer("get_right", settings=StreamerSettings(make_predictions=True , follow_raid=True  , claim_drops=True ,                     bet=BetSettings(strategy=Strategy.PERCENTAGE , percentage=5 , stealth_mode=False, percentage_gap=20 , max_points=1234  , filter_condition=FilterCondition(by=OutcomeKeys.TOTAL_POINTS,     where=Condition.GTE, value=250 ) ) )),
-       Streamer("haixxd", settings=StreamerSettings(make_predictions=False , follow_raid=True  , claim_drops=True ,                     bet=BetSettings(strategy=Strategy.PERCENTAGE , percentage=5 , stealth_mode=False, percentage_gap=20 , max_points=1234  , filter_condition=FilterCondition(by=OutcomeKeys.TOTAL_POINTS,     where=Condition.GTE, value=250 ) ) )),
-       Streamer("shoxiejesuss", settings=StreamerSettings(make_predictions=True , follow_raid=True  , claim_drops=True ,                     bet=BetSettings(strategy=Strategy.PERCENTAGE , percentage=5 , stealth_mode=False, percentage_gap=20 , max_points=1234  , filter_condition=FilterCondition(by=OutcomeKeys.TOTAL_POINTS,     where=Condition.GTE, value=250 ) ) )),
-       Streamer("gunthersuper", settings=StreamerSettings(make_predictions=True  , follow_raid=False , claim_drops=True  , watch_streak=True , bet=BetSettings(strategy=Strategy.SMART      , percentage=5 , stealth_mode=True,  percentage_gap=20 , max_points=234   , filter_condition=FilterCondition(by=OutcomeKeys.TOTAL_USERS,      where=Condition.LTE, value=800 ) ) ))
+       Streamer("chubzarik_dota",
+             settings=StreamerSettings(make_predictions=False,
+                                       follow_raid=True,
+                                       claim_drops=True,
+                                       watch_streak=True,
+                                       bet=BetSettings(
+                                         strategy=Strategy.SMART,
+                                         percentage=5,
+                                         stealth_mode=False,
+                                         percentage_gap=20,
+                                         max_points=60,
+                                         filter_condition=FilterCondition(
+                                           by=OutcomeKeys.TOTAL_USERS,
+                                           where=Condition.LTE,
+                                           value=800)))),
+    Streamer("sclkoma",
+             settings=StreamerSettings(make_predictions=False,
+                                       follow_raid=True,
+                                       claim_drops=True,
+                                       watch_streak=True,
+                                       bet=BetSettings(
+                                         strategy=Strategy.SMART,
+                                         percentage=5,
+                                         stealth_mode=False,
+                                         percentage_gap=20,
+                                         max_points=50,
+                                         filter_condition=FilterCondition(
+                                           by=OutcomeKeys.TOTAL_USERS,
+                                           where=Condition.LTE,
+                                           value=800)))),
+    Streamer("shiishak",
+             settings=StreamerSettings(make_predictions=False,
+                                       follow_raid=True,
+                                       claim_drops=True,
+                                       bet=BetSettings(
+                                         strategy=Strategy.PERCENTAGE,
+                                         percentage=5,
+                                         stealth_mode=False,
+                                         percentage_gap=20,
+                                         max_points=40,
+                                         filter_condition=FilterCondition(
+                                           by=OutcomeKeys.TOTAL_POINTS,
+                                           where=Condition.GTE,
+                                           value=250)))),
+    Streamer("Zitraks",
+             settings=StreamerSettings(make_predictions=False,
+                                       follow_raid=True,
+                                       claim_drops=True,
+                                       bet=BetSettings(
+                                         strategy=Strategy.PERCENTAGE,
+                                         percentage=5,
+                                         stealth_mode=False,
+                                         percentage_gap=20,
+                                         max_points=30,
+                                         filter_condition=FilterCondition(
+                                           by=OutcomeKeys.TOTAL_POINTS,
+                                           where=Condition.GTE,
+                                           value=240)))),
+    Streamer("stariy_bog",
+             settings=StreamerSettings(make_predictions=False,
+                                       follow_raid=True,
+                                       claim_drops=True,
+                                       watch_streak=True,
+                                       bet=BetSettings(
+                                         strategy=Strategy.SMART,
+                                         percentage=5,
+                                         stealth_mode=False,
+                                         percentage_gap=20,
+                                         max_points=50,
+                                         filter_condition=FilterCondition(
+                                           by=OutcomeKeys.TOTAL_USERS,
+                                           where=Condition.LTE,
+                                           value=800))))
     ],                                  # Array of streamers (order = priority)
     followers=False,                    # Automatic download the list of your followers
     followers_order=FollowersOrder.ASC  # Sort the followers list by follow date. ASC or DESC
